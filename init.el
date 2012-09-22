@@ -14,14 +14,15 @@
 ;;______________________________________________________________________
 
 (set-language-environment       "Japanese")
+(set-terminal-coding-system     'utf-8-unix)
+(set-keyboard-coding-system     'utf-8-unix)
+(set-buffer-file-coding-system  'utf-8-unix)
+(setq default-buffer-file-coding-system 'utf-8-unix)
 (prefer-coding-system           'utf-8-unix)
-(setq                           default-buffer-file-coding-system 'utf-8)
-(set-buffer-file-coding-system  'utf-8)
-(set-terminal-coding-system     'utf-8)
-(set-keyboard-coding-system     'utf-8)
-(set-clipboard-coding-system    'utf-8)
+(setq default-coding-systems    'utf-8-unix)
 
-
+; This code causes "text garble"
+; (set-clipboard-coding-system    'utf-8-unix)
 
 
 ;;
@@ -30,7 +31,7 @@
 
 (if window-system
     (progn
-      (set-frame-parameter nil 'alpha 90) ; 透明度
+      (set-frame-parameter nil 'alpha 85) ; 透明度
       (tool-bar-mode nil)                  ; ツールバー非表示
       (menu-bar-mode nil)                  ; ツールバー非表示
       (set-scroll-bar-mode nil)            ; スクロールバー非表示
@@ -48,24 +49,24 @@
 ;; Color
 ;;______________________________________________________________________
 
-(set-foreground-color                                  "#EBEBEB") ; 文字色
+(set-foreground-color                                  "#FAFAFA") ; 文字色
 (set-background-color                                  "#030303") ; 背景色
-(set-cursor-color                                      "#CC2222") ; カーソル色
+(set-cursor-color                                      "#22BBCC") ; カーソル色
 (set-face-background 'region                           "#222244") ; リージョン
-(set-face-foreground 'modeline                         "#DDDDDD") ; モードライン文字
-(set-face-background 'modeline                         "#333333") ; モードライン背景
-(set-face-foreground 'mode-line-inactive               "#333333") ; モードライン文字(非アクティブ)
-(set-face-background 'mode-line-inactive               "#DDDDDD") ; モードライン背景(非アクティブ)
-(set-face-foreground 'font-lock-comment-delimiter-face "#888894") ; コメントデリミタ
-(set-face-foreground 'font-lock-comment-face           "#888894") ; コメント
-(set-face-foreground 'font-lock-string-face            "#77FF77") ; 文字列
-(set-face-foreground 'font-lock-function-name-face     "#99efff") ; 関数名
-(set-face-foreground 'font-lock-keyword-face           "#FF99BB") ; キーワード
-(set-face-foreground 'font-lock-constant-face          "#FFBF77") ; 定数(this, selfなども)
+(set-face-foreground 'modeline                         "#BBBBBB") ; モードライン文字
+(set-face-background 'modeline                         "#181818") ; モードライン背景
+(set-face-foreground 'mode-line-inactive               "#000000") ; モードライン文字(非アクティブ)
+(set-face-background 'mode-line-inactive               "#444444") ; モードライン背景(非アクティブ)
+(set-face-foreground 'font-lock-comment-delimiter-face "#888899") ; コメントデリミタ
+(set-face-foreground 'font-lock-comment-face           "#999999") ; コメント
+(set-face-foreground 'font-lock-string-face            "#77DD99") ; 文字列
+(set-face-foreground 'font-lock-function-name-face     "#88EEff") ; 関数名
+(set-face-foreground 'font-lock-keyword-face           "#FF88aa") ; キーワード
+(set-face-foreground 'font-lock-constant-face          "#FFaa77") ; 定数(this, selfなども)
 (set-face-foreground 'font-lock-variable-name-face     "#44ddFF") ; 変数
 (set-face-foreground 'font-lock-type-face              "#ffbb55") ; クラス
-(set-face-foreground 'fringe                           "#666666") ; fringe(折り返し記号なでが出る部分)
-(set-face-background 'fringe                           "#282828") ; fringe
+(set-face-foreground 'fringe                           "#555") ; fringe(折り返し記号なでが出る部分)
+(set-face-background 'fringe                           "#202020") ; fringe
 
 (add-hook 'org-mode-hook
           '(lambda ()
@@ -83,8 +84,8 @@
 ;; 行番号表示
 (global-linum-mode t)
 (set-face-attribute 'linum nil
-                    :foreground "#3aa"
-		    :background "#222"
+                    :foreground "#777"
+                    :background "#000"
                     :height 0.9)
 
 ;; 行番号フォーマット
@@ -164,3 +165,25 @@
 ;(yas/load-directory yas/scala)
 (require 'scala-mode-auto)
 (setq scala-interpreter "/opt/scala/bin/scala")
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; カーソル行のハイライト
+; http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defface hlline-face
+  '((((class color)
+      (background dark))
+     (:background "#222"))
+    (((class color)
+      (background light))
+     (:background "#000"))
+    (t
+     ()))
+  "*Face used by hl-line.")
+(setq hl-line-face 'hlline-face)
+;; (setq hl-line-face 'underline) ; 下線
+(global-hl-line-mode)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
