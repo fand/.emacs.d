@@ -19,14 +19,15 @@
 (setq scala-interpreter "/opt/scala/bin/scala")
 
 ;; python jedi
-;; (require 'jedi)
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (setq jedi:setup-keys t)
-(add-hook 'python-mode-hook
-          '(lambda ()
-             (jedi:ac-setup)
-             (define-key python-mode-map (kbd "<C-return>") 'jedi:complete)
-             ))
+(require 'jedi)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
+;; (add-hook 'python-mode-hook
+;;           '(lambda ()
+;;              (jedi:ac-setup)
+;;              (define-key python-mode-map (kbd "<C-return>") 'jedi:complete)
+;;              ))
 
 
 ;; emmet-mode
