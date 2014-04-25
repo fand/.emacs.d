@@ -4,6 +4,9 @@
   (normal-top-level-add-subdirs-to-load-path)
 )
 
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+
 ;; init-loader
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits/") ; 設定ファイルがあるディレクトリを指定

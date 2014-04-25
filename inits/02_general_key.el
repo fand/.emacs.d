@@ -37,3 +37,5 @@
 ;; (setq inhibit-startup-message t) 
 (setq initial-scratch-message "")
 
+;; Misc
+(global-set-key (kbd "C-c k") 'browse-kill-ring)
