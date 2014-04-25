@@ -1,3 +1,4 @@
 elpa/*
 site-lisp/*
 auto-save-list/*
+.cask/*
