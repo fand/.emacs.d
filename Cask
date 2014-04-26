@@ -12,7 +12,7 @@
 (depends-on "color-theme")
 (depends-on "dropdown-list")
 (depends-on "flycheck")
-(depends-on "git-gutter")
+;; (depends-on "git-gutter")
 (depends-on "goto-chg")
 (depends-on "init-loader")
 (depends-on "popup")
