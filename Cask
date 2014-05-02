@@ -37,6 +37,7 @@
 ;; CoffeeScript
 (depends-on "coffee-mode")
 (depends-on "sourcemap")
+(depends-on "jade-mode")
 
 ;; Perl
 (depends-on "cperl-mode")
