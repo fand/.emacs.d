@@ -9,6 +9,11 @@
 ;; js2-mode
 (autoload 'js2-mode "js2-mode.el" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-hook 'js2-mode-hook
+          #'(lambda ()
+              (setq js2-basic-offset 2
+                    indent-tabs-mode nil)
+              ))
 
 ;; scala-mode
 (add-to-list 'load-path "~/.emacs.d/site-lisp/scala-mode")
@@ -40,3 +45,8 @@
 (define-key emmet-mode-keymap (kbd "C-c C-m") 'emmet-expand-line)
 
 
+;; markdown mode
+(add-hook 'markdown-mode-hook
+          '(lambda ()
+            (remove-hook 'before-save-hook 'delete-trailing-whitespace)
+            ))

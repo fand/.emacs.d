@@ -33,6 +33,7 @@
 ;; CSS
 (depends-on "less-css-mode")
 (depends-on "sass-mode")
+(depends-on "scss-mode")
 
 ;; CoffeeScript
 (depends-on "coffee-mode")
@@ -90,3 +91,5 @@
 ;; Search
 (depends-on "anzu")
 
+
+(depends-on "ggtags")
