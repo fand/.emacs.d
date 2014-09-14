@@ -15,7 +15,7 @@
 (global-set-key (kbd "C-M-r")   'replace-regexp)
 (global-set-key (kbd "C-r")     'replace-string)
 (global-set-key (kbd "C-/")     'undo)
-
+(global-set-key (kbd "C-\\")     nil)
 
 ;; C-c cでcompile
 (define-key mode-specific-map "c" 'compile)
@@ -34,7 +34,7 @@
 
 
 (setq inhibit-startup-screen t)
-;; (setq inhibit-startup-message t) 
+;; (setq inhibit-startup-message t)
 (setq initial-scratch-message "")
 
 ;; Misc

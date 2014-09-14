@@ -6,15 +6,6 @@
              (c-set-offset 'arglist-close 0) ; 関数の引数リストの閉じ括弧はインデントしない
              ))
 
-;; js2-mode
-(autoload 'js2-mode "js2-mode.el" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-hook 'js2-mode-hook
-          #'(lambda ()
-              (setq js2-basic-offset 2
-                    indent-tabs-mode nil)
-              ))
-
 ;; scala-mode
 (add-to-list 'load-path "~/.emacs.d/site-lisp/scala-mode")
 (add-hook 'scala-mode-hook
@@ -41,12 +32,12 @@
 (add-hook 'css-mode-hook  'emmet-mode) ;; CSSにも使う
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent はスペース2個
 (eval-after-load "emmet-mode"
-    '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
+  '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
 (define-key emmet-mode-keymap (kbd "C-c C-m") 'emmet-expand-line)
 
 
 ;; markdown mode
 (add-hook 'markdown-mode-hook
           '(lambda ()
-            (remove-hook 'before-save-hook 'delete-trailing-whitespace)
-            ))
+             (remove-hook 'before-save-hook 'delete-trailing-whitespace)
+             ))
