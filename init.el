@@ -4,7 +4,7 @@
   (normal-top-level-add-subdirs-to-load-path)
 )
 
-(require 'cask "~/.cask/cask.el")
+(require 'cask)
 (cask-initialize)
 
 ;; init-loader
