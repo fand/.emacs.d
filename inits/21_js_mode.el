@@ -9,6 +9,16 @@
                     indent-tabs-mode nil)
               ))
 
+;; tern
+(add-hook 'js2-mode-hook 'tern-mode)
+(eval-after-load 'tern
+  '(progn
+     (require 'tern-auto-complete)
+     (tern-ac-setup)
+     (define-key ac-mode-map (kbd "C-\\") 'ac-start)
+     (setq tern-ac-completion-truncate-length 30)
+     ))
+
 ;; TypeScript mode
 (add-hook 'typescript-mode-hook
           '(lambda ()
