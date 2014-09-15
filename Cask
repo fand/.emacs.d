@@ -7,7 +7,6 @@
 (depends-on "ag")
 (depends-on "anything")
 (depends-on "auto-complete")
-(depends-on "auto-complete-config")
 (depends-on "browse-kill-ring")
 (depends-on "color-theme")
 (depends-on "dropdown-list")
