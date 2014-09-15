@@ -78,6 +78,9 @@
 (depends-on "go-mode")
 (depends-on "go-autocomplete")
 
+;; Erlang
+(depends-on "edts")
+
 ;; Programming Misc
 (depends-on "autopair")
 (depends-on "rainbow-mode")
