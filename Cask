@@ -5,13 +5,11 @@
 (source marmalade)
 
 (depends-on "ag")
-(depends-on "anything")
 (depends-on "auto-complete")
 (depends-on "browse-kill-ring")
 (depends-on "color-theme")
 (depends-on "dropdown-list")
 (depends-on "flycheck")
-;; (depends-on "git-gutter")
 (depends-on "goto-chg")
 (depends-on "init-loader")
 (depends-on "popup")
@@ -24,20 +22,34 @@
 (depends-on "yasnippet")
 (depends-on "zlc")
 
+;; helm
+(depends-on "helm")
+(depends-on "helm-ag")
+(depends-on "helm-c-moccur")
+(depends-on "helm-descbinds")
+(depends-on "helm-gtags")
+(depends-on "wgrep-helm")
+(depends-on "wgrep-ag")
+
 
 ;; JavaScript
 (depends-on "js2-mode")
 (depends-on "json-mode")
-
-;; CSS
-(depends-on "less-css-mode")
-(depends-on "sass-mode")
-(depends-on "scss-mode")
+(depends-on "tern")
+(depends-on "tern-auto-complete")
 
 ;; CoffeeScript
 (depends-on "coffee-mode")
 (depends-on "sourcemap")
 (depends-on "jade-mode")
+
+;; TypeScript
+;;(depends-on "typescript-mode")
+
+;; CSS
+(depends-on "less-css-mode")
+(depends-on "sass-mode")
+(depends-on "scss-mode")
 
 ;; Perl
 (depends-on "cperl-mode")
