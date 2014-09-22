@@ -8,9 +8,7 @@
 (add-to-list 'ac-modes 'org-mode)
 
 ;;(define-key ac-mode-map (kbd "C-\\") 'auto-complete)
-;;(setq ac-auto-show-menu 2)
 (ac-set-trigger-key "C-\\")
-
 
 (setq ac-ignore-case t)
 ;; 7.5. 補完メニュー表示時のみC-n/C-pで補完候補を選択する
@@ -18,13 +16,12 @@
 (define-key ac-menu-map "\C-n" 'ac-next)
 (define-key ac-menu-map "\C-p" 'ac-previous)
 
-
-
-(setq ac-delay 0.05)  ;; n秒後に補完開始
+(setq ac-delay 0.05)            ;; n秒後に補完開始
+(setq ac-auto-show-menu 0.05)   ;; n秒後に補完メニューを表示
+(setq ac-quick-help-delay 0.5)  ;; n秒後にクイックヘルプを表示
+;;(setq ac-show-menu-immediately-on-auto-complete t)
 (setq ac-use-fuzzy t)  ;; 曖昧マッチ有効
 (setq ac-use-comphist t)  ;; 補完推測機能有効
-(setq ac-auto-show-menu 0.05)  ;; n秒後に補完メニューを表示
-(setq ac-quick-help-delay 0.5)  ;; n秒後にクイックヘルプを表示
 (setq ac-ignore-case t)  ;; 大文字・小文字を区別する
 
 ;; 表示設定

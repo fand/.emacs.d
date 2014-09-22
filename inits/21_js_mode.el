@@ -10,12 +10,12 @@
               ))
 
 ;; tern
-(add-hook 'js2-mode-hook 'tern-mode)
 (eval-after-load 'tern
   '(progn
+     (add-hook 'js2-mode-hook 'tern-mode)
      (require 'tern-auto-complete)
      (tern-ac-setup)
-     (define-key ac-mode-map (kbd "C-\\") 'ac-start)
+     ;;(define-key tern-mode-keymap (kbd "C-\\") 'tern-ac-complete)
      (setq tern-ac-completion-truncate-length 30)
      ))
 
@@ -24,3 +24,9 @@
           '(lambda ()
              (custom-set-variables '(typescript-indent-level 2))
              ))
+
+;; (defun tern-ac-dot-complete ()
+;;   "Insert dot and complete code at point by tern."
+;;   (interactive)
+;;   (insert ".")
+;;   (tern-ac-complete))
